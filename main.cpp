@@ -6,9 +6,6 @@ struct Node{
 };
 
 void reverse(Node* curr, Node* prev){
-  //if next == nullptr, переворачиваем пойнтер, ретурн
-  //else вызов на некст кур
-  //ретурн
   if (curr->next == nullptr){
     curr->next = prev;
     return;
@@ -28,4 +25,8 @@ int main(){
   n2->next = n3;
   reverse(head, nullptr);
   std::cout << head->next << ' ' << n1->next->data << ' ' << n2->next->data << ' ' << n3->next->data;
+  delete head;
+  delete n1;
+  delete n2;
+  delete n3;
 }
